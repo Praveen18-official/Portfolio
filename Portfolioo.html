@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" 
@@ -16,17 +15,13 @@
     <link rel="stylesheet" href="responsive.css">
 </head>
 <style>
-    /* Styles defined for the desktop or the bigger screen devices*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-/* Header Navbar Styles */
 .navbar {
     display: flex;
     align-items: center;
@@ -37,45 +32,35 @@ body {
     background-image: linear-gradient(90deg, #74D7BB, #53C8B6, #35A99C);
     background-color: transparent;
 }
-
 .logo {
     padding: 0 5rem;
 }
-
 .logo .logo-heading {
     color: #fff;
 }
-
 .menu {
     padding: 0 5rem;
 }
-
 .hamburger {
     display: none;
     color: #fff;
     font-size: 25px;
 }
-
 .cross-icon {
     display: none;
 }
-
 .menu .menu-list {
     display: flex;
     list-style: none;
 }
-
 .menu-list .menu-list-items {
     padding: 0.5rem 1rem;
 }
-
 @media screen and (min-width: 856px) and (max-width: 1024px) {
     .menu-list .menu-list-items {
         padding: 0.5rem 0.3rem;
     }
 }
-
-/* Main Hero Section Styles */
 .hero {
     background-image: url('./Images/heroImg3.avif');
     background-repeat: no-repeat;
@@ -87,20 +72,16 @@ body {
     justify-content: start;
     margin: 4.8rem 0;
 }
-
 .hero .intro {
     text-align: center;
     margin: 0 5rem;
 }
-
 .hero .intro-buttons {
     margin: 2rem 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-
-/* About section styles */
 .about {
     display: flex;
     align-items: center;
@@ -108,43 +89,34 @@ body {
     justify-content: space-between;
     width: 100%;
 }
-
 .about .about-text {
     width: 450px;
     color: #fff;
     padding: 5rem 1rem 5rem 5rem;
 }
-
 .about .about-image img {
     height: 400px;
     width: 450px;
     padding: 5rem 5rem 5rem 1rem;
 }
-
-/* Portfolio section styles */
 .portfolio {
     margin: 4.8rem 0;
     padding: 0 5rem;
 }
-
 .port-card {
     padding: 0 !important;
     background: none !important;
     border: 2px solid #000;
 }
-
 .port-card .image {
     width: 100%;
 }
-
 .port-card .image img {
     height: 200px;
     width: 100%;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 }
-
-/* Services section styles */
 .services {
     display: flex;
     align-items: center;
@@ -153,19 +125,16 @@ body {
     margin: 4.8rem 0;
     padding: 0 5rem;
 }
-
 .my-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 2rem 0;
 }
-
 .my-row .my-col {
     text-align: center;
     width: 30%;
 }
-
 .my-card {
     text-align: center;
     display: flex;
@@ -176,7 +145,6 @@ body {
     background-image: linear-gradient(#74D7BB, #53C8B6, #35A99C);
     padding: 1rem;
 }
-
 .icon {
     height: 100px;
     width: 100px;
@@ -186,53 +154,41 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 .icon svg {
     font-size: 30px;
     color: #fff;
 }
-
-/* Contact section styles */
 .contact {
     padding: 0 5rem;
 }
-
 .contact-content {
     display: flex;
     margin: 3rem 0;
     justify-content: space-between;
 }
-
 .contact-form-container {
     width: 50%;
 }
-
 .contact-form {
     display: flex;
     flex-direction: column;
 }
-
 .contact-form .form-controls {
     width: 80%;
     padding: 10px 0;
     margin: 1.67rem 0;
 }
-
 .contact-form .form-btn {
     width: 83%;
 }
-
 .contact-details {
     width: 50%;
 }
-
-/* Footer Styles */
 .footer {
     background-color: #000;
     color: #fff;
     padding: 2rem;
 }
-
 .footer-list-items {
     display: flex;
     align-items: center;
@@ -243,57 +199,42 @@ body {
     border-radius: 50%;
     background-color: #53C8B6;
 }
-
 .footer-links {
     font-size: 24px;
     color: #fff;
     text-decoration: none;
 }
-
 .social-links {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .footer-menu {
     padding: 0 5rem;
 }
-
 .footer-menu .footer-menu-list {
     display: flex;
     list-style: none;
 }
-
-
-
-
-
-
-/* utility classes */
 .greet-heading {
     font-size: 1.3rem;
     font-weight: lighter;
     margin: 0;
     letter-spacing: 1px;
 }
-
 .my-heading {
     font-size: 2.5rem;
     margin: 0;
 }
-
 .sub-heading {
     margin: 0;
     font-size: 0.8rem;
     color: #ccc;
     font-weight: lighter;
 }
-
 .links:hover {
     border-bottom: 2px solid #fff;
 }
-
 .links {
     border-bottom: 2px solid transparent;
     transition: all 0.25s;
@@ -301,7 +242,6 @@ body {
     text-decoration: none;
     color: #fff;
 }
-
 .btn {
     padding: 10px 20px;
     border-radius: 5px;
@@ -309,59 +249,48 @@ body {
     letter-spacing: 1px;
     border: none;
 }
-
 .common-btn {
     background-color: #35A99C;
     color: #fff;
     border: 2px solid #35A99C;
     transition: all 0.25s;
 }
-
 .common-btn:hover {
     background-color: #fff;
     color: #35A99C;
     border: 2px solid #35A99C;
     outline: none;
 }
-
 .ghost-btn {
     background-color: #fff;
     color: #35A99C;
     border: 2px solid #35A99C;
     outline: none;
 }
-
 .ghost-btn:hover {
     background-color: #35A99C;
     color: #fff;
     transition: all 0.25s;
     border: 2px solid #35A99C;
 }
-
 .heading-span {
     font-weight: bolder;
 }
-
 .text-center {
     text-align: center;
 }
-
 .small-para {
     font-size: 14px;
     color: #fff;
 }
-
 .white-text {
     color: #fff;
 }
-
 .blue-text {
     color: #363D73;
 }
-
 </style>
 <body>
-    <!-- Navbar header section -->
     <header class="header">
         <nav class="navbar">
             <div class="logo">
@@ -402,8 +331,6 @@ body {
             </div>
         </nav>
     </header>
-
-    <!-- Main hero banner -->
     <section id="home" class="hero">
         <div class="intro">
             <div class="headings">
@@ -419,8 +346,6 @@ body {
             </div>
         </div>
     </section>
-
-    <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="portfolio-heading">
             <h1 class="my-heading text-center">Featured Portfolio</h1>
@@ -501,8 +426,6 @@ body {
             </div>
         </div>
     </section>
-
-   <!-- About Section -->
 <section id="about" class="about">
     <div class="about-text">
         <h1 class="my-heading">About Me</h1>
@@ -517,9 +440,6 @@ body {
         <img src="WhatsApp Image 2024-01-05 at 10.13.00_671fbc69.jpg" alt="About Image">
     </div>
 </section>
-
-
-    <!-- Services Section -->
 <section class="services" id="services">
     <div class="services-heading">
         <h1 class="my-heading text-center">My Services</h1>
@@ -597,9 +517,6 @@ body {
         </div>
     </div>
 </section>
-
-
-    <!-- Contact me section -->
     <section class="contact" id="contact">
         <div class="contact-heading">
             <h1 class="my-heading text-center">Contact Me</h1>
@@ -633,7 +550,6 @@ body {
                     <h5 class="contact-heading">PHONE</h5>
                     <p class="contact-text">+91 7530004467</p>
                 </div>
-                
                 <div class="details">
                     <h5 class="contact-heading">ADDRESS</h5>
                     <p class="contact-text">Mahalingapuram</p>
@@ -643,8 +559,6 @@ body {
             </div>
         </div>
     </section>
-
-    <!-- Footer section -->
     <footer class="footer">
         <div class="footer-content text-center">
             <h4>
@@ -678,7 +592,6 @@ body {
             </div>
         </div>
     </footer>
-
     <script src=
 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
         integrity=
