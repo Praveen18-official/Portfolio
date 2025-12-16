@@ -1,15 +1,21 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Grid3X3 } from "lucide-react";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", section: "hero" },
+  { name: "About", section: "about" },
+  { name: "Skills", section: "skills" },
+  { name: "Projects", section: "projects" },
+  { name: "Contact", section: "contact" },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  currentSection: string;
+  setCurrentSection: (section: string) => void;
+}
+
+const Navbar = ({ currentSection, setCurrentSection }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,10 +27,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
+  const navigateToSection = (section: string) => {
     setIsOpen(false);
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
+    setCurrentSection(section);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -39,6 +45,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <a
             href="#"
+            onClick={() => navigateToSection("hero")}
             className="font-display text-xl md:text-2xl font-bold text-gradient"
           >
             Portfolio
@@ -48,9 +55,13 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
-                key={link.name}
-                onClick={() => scrollToSection(link.href)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium"
+                key={link.section}
+                onClick={() => navigateToSection(link.section)}
+                className={`transition-colors duration-300 font-medium ${
+                  currentSection === link.section
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-primary"
+                }`}
               >
                 {link.name}
               </button>
@@ -58,7 +69,7 @@ const Navbar = () => {
             <Button
               variant="hero"
               size="sm"
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => navigateToSection("contact")}
             >
               Hire Me
             </Button>
@@ -84,16 +95,20 @@ const Navbar = () => {
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <button
-                  key={link.name}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+                  key={link.section}
+                  onClick={() => navigateToSection(link.section)}
+                  className={`text-left font-medium py-2 transition-colors duration-300 ${
+                    currentSection === link.section
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-primary"
+                  }`}
                 >
                   {link.name}
                 </button>
               ))}
               <Button
                 variant="hero"
-                onClick={() => scrollToSection("#contact")}
+                onClick={() => navigateToSection("contact")}
                 className="mt-2"
               >
                 Hire Me

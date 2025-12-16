@@ -6,26 +6,26 @@ const socialLinks = [
   {
     name: "Instagram",
     icon: Instagram,
-    href: "https://instagram.com/yourusername",
+    href: "https://www.instagram.com/praveen18_official/",
     gradient: "from-purple-500 via-pink-500 to-orange-500",
     hoverBg: "hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-orange-500",
-    username: "@yourusername",
+    username: "@praveen18_official",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://www.linkedin.com/in/praveen18official",
     gradient: "from-blue-600 to-blue-500",
     hoverBg: "hover:bg-[#0077B5]",
-    username: "yourusername",
+    username: "praveen18official",
   },
   {
     name: "WhatsApp",
     icon: MessageCircle,
-    href: "https://wa.me/1234567890",
+    href: "https://wa.me/917530004467",
     gradient: "from-green-500 to-green-400",
     hoverBg: "hover:bg-[#25D366]",
-    username: "+1234567890",
+    username: "+91 75300 04467",
   },
 ];
 
@@ -158,11 +158,11 @@ const Contact = () => {
                 Send me an email
               </h3>
               <motion.a
-                href="mailto:hello@example.com"
+                href="mailto:praveengovindaraj2@gmail.com"
                 className="text-primary text-lg font-medium hover:underline inline-flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
               >
-                hello@example.com
+                praveengovindaraj2@gmail.com
                 <ArrowRight className="w-4 h-4" />
               </motion.a>
             </motion.div>
@@ -242,7 +242,7 @@ const Contact = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Button variant="hero" size="lg" asChild>
-                  <a href="mailto:hello@example.com" className="group">
+                  <a href="mailto:praveengovindaraj2@gmail.com" className="group">
                     Start a Conversation
                     <motion.span
                       animate={{ x: [0, 5, 0] }}

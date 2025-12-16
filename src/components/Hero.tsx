@@ -3,13 +3,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Code2, Smartphone, Sparkles } from "lucide-react";
 import FloatingGlobe from "./FloatingGlobe";
 
-const Hero = () => {
-  const scrollToProjects = () => {
-    document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+interface HeroProps {
+  setCurrentSection: (section: string) => void;
+}
+
+const Hero = ({ setCurrentSection }: HeroProps) => {
+  const navigateToProjects = () => {
+    setCurrentSection("projects");
   };
 
-  const scrollToContact = () => {
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+  const navigateToContact = () => {
+    setCurrentSection("contact");
   };
 
   const containerVariants = {
@@ -139,13 +143,13 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="hero" size="lg" onClick={scrollToProjects}>
+                <Button variant="hero" size="lg" onClick={navigateToProjects}>
                   <Code2 className="w-5 h-5" />
                   View My Work
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="outline" size="lg" onClick={scrollToContact}>
+                <Button variant="outline" size="lg" onClick={navigateToContact}>
                   <Smartphone className="w-5 h-5" />
                   Get In Touch
                 </Button>
@@ -195,7 +199,7 @@ const Hero = () => {
           transition={{ delay: 1.5 }}
         >
           <motion.button
-            onClick={scrollToProjects}
+            onClick={navigateToProjects}
             className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}

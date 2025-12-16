@@ -12,6 +12,7 @@ const webProjects = [
     icon: Leaf,
     gradient: "from-emerald-500 to-teal-500",
     bgGradient: "from-emerald-500/20 to-teal-500/20",
+    image: "/iot-leaf-disease.svg",
   },
   {
     title: "Fitness Tracker",
@@ -21,6 +22,7 @@ const webProjects = [
     icon: Activity,
     gradient: "from-orange-500 to-amber-500",
     bgGradient: "from-orange-500/20 to-amber-500/20",
+    image: "/fitness-tracker.svg",
   },
   {
     title: "Land Leasing & Crop Platform",
@@ -30,6 +32,7 @@ const webProjects = [
     icon: MapPin,
     gradient: "from-green-500 to-lime-500",
     bgGradient: "from-green-500/20 to-lime-500/20",
+    image: "/land-leasing.svg",
   },
 ];
 
@@ -42,6 +45,7 @@ const mobileProjects = [
     icon: ShoppingCart,
     gradient: "from-teal-500 to-cyan-500",
     bgGradient: "from-teal-500/20 to-cyan-500/20",
+    image: "/agri-ecommerce.svg",
   },
   {
     title: "Plant Disease Detection",
@@ -51,6 +55,7 @@ const mobileProjects = [
     icon: AlertTriangle,
     gradient: "from-rose-500 to-pink-500",
     bgGradient: "from-rose-500/20 to-pink-500/20",
+    image: "/plant-disease.svg",
   },
   {
     title: "Emergency Response System",
@@ -60,6 +65,7 @@ const mobileProjects = [
     icon: Bell,
     gradient: "from-red-500 to-orange-500",
     bgGradient: "from-red-500/20 to-orange-500/20",
+    image: "/emergency-response.svg",
   },
 ];
 
@@ -76,32 +82,48 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       whileHover={{ y: -10 }}
       className="group relative bg-gradient-card border border-border rounded-2xl overflow-hidden hover:shadow-card hover:border-primary/30 transition-all duration-500"
     >
-      {/* Project Icon Header */}
-      <div className={`h-48 bg-gradient-to-br ${project.bgGradient} flex items-center justify-center relative overflow-hidden`}>
-        {/* Animated background circles */}
-        <motion.div
-          className="absolute w-32 h-32 bg-white/10 rounded-full -top-10 -left-10"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+      {/* Project Image Header */}
+      <div className="h-48 relative overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            // Fallback to icon if image fails to load
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+            const iconContainer = target.nextElementSibling as HTMLElement;
+            if (iconContainer) iconContainer.style.display = 'flex';
           }}
-          transition={{ duration: 4, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute w-24 h-24 bg-white/10 rounded-full -bottom-5 -right-5"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.6, 0.4],
-          }}
-          transition={{ duration: 3, repeat: Infinity }}
         />
         
-        <motion.div
-          whileHover={{ scale: 1.2, rotate: 10 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          <project.icon className="w-20 h-20 text-primary opacity-80" />
-        </motion.div>
+        {/* Icon Fallback */}
+        <div className={`absolute inset-0 bg-gradient-to-br ${project.bgGradient} flex items-center justify-center overflow-hidden`} style={{display: 'none'}}>
+          {/* Animated background circles */}
+          <motion.div
+            className="absolute w-32 h-32 bg-white/10 rounded-full -top-10 -left-10"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{ duration: 4, repeat: Infinity }}
+          />
+          <motion.div
+            className="absolute w-24 h-24 bg-white/10 rounded-full -bottom-5 -right-5"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.4, 0.6, 0.4],
+            }}
+            transition={{ duration: 3, repeat: Infinity }}
+          />
+          
+          <motion.div
+            whileHover={{ scale: 1.2, rotate: 10 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <project.icon className="w-20 h-20 text-primary opacity-80" />
+          </motion.div>
+        </div>
         
         <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent" />
       </div>
@@ -119,7 +141,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         </p>
 
         {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2">
           {project.tech.map((tech, i) => (
             <motion.span
               key={tech}
@@ -133,14 +155,6 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             </motion.span>
           ))}
         </div>
-
-        {/* View Project Button */}
-        <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 400 }}>
-          <Button variant="ghost" size="sm" className="group/btn p-0">
-            <span>View Details</span>
-            <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-          </Button>
-        </motion.div>
       </div>
 
       {/* Hover border gradient */}

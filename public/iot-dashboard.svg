@@ -1,0 +1,76 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#065f46;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:0.1" />
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0fdf4" />
+      <stop offset="100%" style="stop-color:#dcfce7" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bg)" />
+  
+  <!-- Dashboard screen -->
+  <rect x="50" y="40" width="300" height="220" fill="url(#screen)" rx="8" stroke="#10b981" stroke-width="2" />
+  
+  <!-- Header -->
+  <rect x="50" y="40" width="300" height="35" fill="#10b981" rx="8" />
+  <rect x="50" y="65" width="300" height="10" fill="#10b981" />
+  <text x="200" y="62" text-anchor="middle" fill="white" font-size="14" font-weight="bold">IoT Farm Dashboard</text>
+  
+  <!-- Sensor cards -->
+  <g transform="translate(70, 90)">
+    <rect x="0" y="0" width="80" height="60" fill="white" rx="4" stroke="#10b981" stroke-width="1" />
+    <circle cx="15" cy="15" r="4" fill="#10b981" />
+    <text x="25" y="18" fill="#065f46" font-size="10" font-weight="bold">Sensor 1</text>
+    <text x="10" y="35" fill="#6b7280" font-size="8">Temp: 24°C</text>
+    <text x="10" y="45" fill="#6b7280" font-size="8">Humidity: 65%</text>
+    <text x="10" y="55" fill="#10b981" font-size="8" font-weight="bold">Status: Active</text>
+  </g>
+  
+  <g transform="translate(160, 90)">
+    <rect x="0" y="0" width="80" height="60" fill="white" rx="4" stroke="#10b981" stroke-width="1" />
+    <circle cx="15" cy="15" r="4" fill="#10b981" />
+    <text x="25" y="18" fill="#065f46" font-size="10" font-weight="bold">Sensor 2</text>
+    <text x="10" y="35" fill="#6b7280" font-size="8">Temp: 26°C</text>
+    <text x="10" y="45" fill="#6b7280" font-size="8">Humidity: 70%</text>
+    <text x="10" y="55" fill="#10b981" font-size="8" font-weight="bold">Status: Active</text>
+  </g>
+  
+  <g transform="translate(250, 90)">
+    <rect x="0" y="0" width="80" height="60" fill="white" rx="4" stroke="#f59e0b" stroke-width="1" />
+    <circle cx="15" cy="15" r="4" fill="#f59e0b" />
+    <text x="25" y="18" fill="#065f46" font-size="10" font-weight="bold">Sensor 3</text>
+    <text x="10" y="35" fill="#6b7280" font-size="8">Temp: 28°C</text>
+    <text x="10" y="45" fill="#6b7280" font-size="8">Humidity: 80%</text>
+    <text x="10" y="55" fill="#f59e0b" font-size="8" font-weight="bold">Alert: High</text>
+  </g>
+  
+  <!-- Chart area -->
+  <g transform="translate(70, 160)">
+    <rect x="0" y="0" width="260" height="80" fill="white" rx="4" stroke="#10b981" stroke-width="1" />
+    <text x="10" y="15" fill="#065f46" font-size="10" font-weight="bold">Weekly Trends</text>
+    
+    <!-- Simple line chart -->
+    <polyline points="20,60 40,50 60,55 80,45 100,40 120,35 140,40 160,30 180,35 200,25 220,30 240,20" 
+              fill="none" stroke="#10b981" stroke-width="2" />
+    <polyline points="20,65 40,60 60,62 80,58 100,55 120,52 140,55 160,50 180,52 200,48 220,50 240,45" 
+              fill="none" stroke="#f59e0b" stroke-width="2" />
+    
+    <text x="20" y="75" fill="#6b7280" font-size="7">Mon</text>
+    <text x="60" y="75" fill="#6b7280" font-size="7">Wed</text>
+    <text x="100" y="75" fill="#6b7280" font-size="7">Fri</text>
+    <text x="140" y="75" fill="#6b7280" font-size="7">Sun</text>
+    <text x="180" y="75" fill="#6b7280" font-size="7">Tue</text>
+    <text x="220" y="75" fill="#6b7280" font-size="7">Thu</text>
+  </g>
+  
+  <!-- Alert notification -->
+  <g transform="translate(280, 50)">
+    <circle cx="0" cy="0" r="8" fill="#dc2626" />
+    <text x="0" y="3" text-anchor="middle" fill="white" font-size="10" font-weight="bold">!</text>
+  </g>
+</svg>
